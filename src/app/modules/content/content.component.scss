@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 80vh;
+    button{
+      width: 500px;
+      height: 200px;
+      font-size: 2.5rem;
+    }
+  }
+  

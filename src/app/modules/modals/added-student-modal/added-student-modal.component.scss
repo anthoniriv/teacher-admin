@@ -1,0 +1,49 @@
+.modal {
+  display: flex;
+  position:absolute;
+  width: 90%;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background-color: aqua;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.close-button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+}
+
+.modal-content {
+  padding: 10px 0;
+}
+
+.modal-instructions {
+  border-left: 4px solid black;
+  padding-left: 10px;
+  margin: 10px 0;
+}
+
+.modal-instructions p {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.student-list {
+  padding-left: 14px;
+}
+
+.student-list p {
+  margin: 4px 0;
+}
+

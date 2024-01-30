@@ -1,0 +1,31 @@
+.email-confirmation-modal {
+  width: 500px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0; /* Un color de borde claro que no contrastará fuertemente con el fondo blanco */
+}
+
+.email-confirmation-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.email-confirmation-content p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.goto-login-button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  display: block;
+  margin: 0 auto;
+}

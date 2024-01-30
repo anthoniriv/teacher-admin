@@ -1,0 +1,62 @@
+.modal {
+  display: block; /* Cambiar a 'none' para ocultar el modal */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.title {
+  display: flex; /* Usa flex para alinear los elementos internos */
+  justify-content: space-between; /* Esto separará los elementos uniformemente */
+  align-items: center; /* Esto centrará los elementos verticalmente */
+}
+
+
+.title h2 {
+  margin-right: 120px;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.units-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.unit-card {
+  min-width: 200px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 0 5px;
+  flex-shrink: 0; /* Evita que se reduzca el tamaño de los elementos */
+  text-align: center;
+}
+
+.unit-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

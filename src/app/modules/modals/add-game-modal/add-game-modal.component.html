@@ -1,0 +1,35 @@
+<mat-dialog-content class="add-class-modal-content">
+    <div class="modal-header">
+      <h2>Add Game</h2>
+      
+    </div>
+    <form class="modal-form">
+      <div class="form-row">
+        <mat-form-field class="class-name">
+          <mat-label>Game Name</mat-label>
+          <input matInput placeholder="">
+        </mat-form-field>
+        <mat-form-field class="name">
+          <mat-label>Info Game</mat-label>
+          <input matInput placeholder="">
+        </mat-form-field>
+      </div>
+      <!-- <div class="form-row">
+        <mat-form-field class="selector">
+          <mat-label>Choose Option</mat-label>
+          <mat-select>
+            <mat-option value="option1">Macaws</mat-option>
+            <mat-option value="option2">Parrots</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div> -->
+      <mat-form-field class="description">
+        <mat-label>Short Description</mat-label>
+        <textarea matInput placeholder=""></textarea>
+      </mat-form-field>
+      <div class="button-container">
+        <button mat-raised-button color="primary" (click)="onCreateClick()">Create</button>
+    </div>
+    </form>
+  </mat-dialog-content>
+  

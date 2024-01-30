@@ -1,0 +1,44 @@
+.modal {
+  width: 300px;
+  margin: auto;
+  padding: 20px;
+  position: relative;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0; /* Un color de borde claro que no contrastará fuertemente con el fondo blanco */
+}
+
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-body input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.send-button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}

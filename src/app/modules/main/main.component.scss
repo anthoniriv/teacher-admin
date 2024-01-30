@@ -1,0 +1,156 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: white;
+  }
+  
+  .profile {
+    text-align: center;
+  }
+  
+  .perfil-imagen {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .profile button {
+    display: block;
+    margin: auto;
+  }
+  
+  .toolbar-logo {
+    height: 50px;
+    width: auto;
+  
+  }
+  
+  .drawer-left {
+    width: 200px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .drawer-left button {
+    font-size: 24px;
+  }
+  
+  .drawer-left .container {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: 95%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .img-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .img-container img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .logo-container {
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .logo-imagen {
+    width: 50px;
+    height: 50px;
+    margin-left: 20px;
+  }
+  
+  .mat-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .mat-toolbar button {
+    margin-left: 8px;
+  }
+  
+  .main .top {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .main .top .account, .main .top .subscription {
+    width: 50%;
+  }
+  
+  .main .down {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .main .down mat-form-field {
+    width: calc(100% - 40px);
+    margin-bottom: 10px;
+  }
+  
+  .mat-toolbar-content-right {
+    width: 97%;
+    background-color: white;
+    border-bottom: 2px solid #C7EBE2;
+    margin-left: 20px;
+    margin-right: 15px !important;
+    margin-top: 5px;
+    padding-bottom: 10px;
+    gap: 20px;
+  }
+  
+  .centered-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 64px);
+  }
+  
+  .centered-content h1 {
+    margin-bottom: 20px;
+    color: black;
+  }
+  
+  .updatebtn {
+    display: flex;
+    width: 200px;
+    background-color:#F5453D !important;
+    height: 50px;
+    padding: 5px;
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+  
+  
+  
+  .howtobtn {
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  .contactbtn {
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  
+  

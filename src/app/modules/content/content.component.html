@@ -1,0 +1,18 @@
+<section class="main" *ngIf="!showParrots && !showMacaws">
+  <button mat-raised-button color="primary" (click)="toggleMacaws()">
+    MACAWS
+  </button>
+  <button mat-raised-button color="accent" (click)="toggleParrots()">
+    PARROTS
+  </button>
+</section>
+
+<div *ngIf="showParrots">
+  <!-- Coloca aquí el contenido del componente Parrots -->
+  <app-parrots></app-parrots>
+</div>
+
+<div *ngIf="showMacaws">
+  <!-- Coloca aquí el contenido del componente Macaws -->
+  <app-macaws></app-macaws>
+</div>

@@ -1,0 +1,49 @@
+.h1{
+  text-align: center;
+  margin-top: 180px;
+  margin-bottom: 20px;
+}
+
+.login-container {
+  width: 300px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 0; /* Remove border-radius if you want sharp corners */
+}
+
+.login-form .login-button,
+.login-form .signup-button {
+  padding: 10px;
+  border: 2px solid #000;
+  background: #fff;
+  cursor: pointer;
+}
+
+.login-form .login-button:hover,
+.login-form .signup-button:hover {
+  background: #f7f7f7;
+}
+
+.separator {
+  text-align: center;
+  border-top: 1px solid #000;
+  line-height: 0.1em;
+  margin: 20px 0 20px;
+}
+
+.separator:before {
+  content: 'or';
+  background: #fff;
+  padding: 0 10px;
+}

@@ -1,0 +1,60 @@
+<mat-drawer-container class="example-container">
+    <mat-drawer #drawer mode="side" opened="true" class="drawer-left">
+      <div class="container">
+        <div class="profile">
+          <img
+            src="../assets/img/teach.png"
+            style="width: 100px; height: 100px"
+            alt="Perfil"
+            class="perfil-imagen"
+          />
+          <button mat-raised-button routerLink="/main/profile">Profile</button>
+        </div>
+  
+        <div class="options">
+          <p>
+            <button mat-button routerLink="/main/classes">
+              <mat-icon>class</mat-icon> Classes
+            </button>
+          </p>
+          <p>
+            <button mat-button routerLink="/main/students">
+              <mat-icon>school</mat-icon> Students
+            </button>
+          </p>
+          <p>
+            <button mat-button routerLink="/main/content">
+              <mat-icon>content_copy</mat-icon> Content
+            </button>
+          </p> 
+          <p>
+            <button mat-button routerLink="/main/teachers">
+              <mat-icon>content_copy</mat-icon> Teachers
+            </button>
+          </p>
+        </div>
+  
+        <div class="settings">
+          <button mat-button><mat-icon>settings</mat-icon> Settings</button>
+        </div>
+      </div>
+    </mat-drawer>
+    
+      <mat-drawer-content class="topbar">
+        <mat-toolbar color="primary" class="mat-toolbar-content-right"> 
+          <img
+            src="../assets/img/lorito.png"
+            alt="Logo"
+            class="logo-imagen"
+            routerLink="/main"/>
+         </mat-toolbar>
+           
+        <router-outlet></router-outlet>
+
+        <div class="centered-content">
+          <h1>RETURN TO LOGIN</h1>
+          <button mat-raised-button routerLink="/login">LOGIN</button>
+        </div>
+      </mat-drawer-content>
+      
+</mat-drawer-container>

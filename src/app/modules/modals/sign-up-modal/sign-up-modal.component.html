@@ -1,0 +1,17 @@
+<div class="signup-modal">
+  <div class="signup-header">
+    <h1>Sign Up</h1>
+    <button class="close-button" (click)="close()">X</button>
+  </div>
+  <form class="signup-form">
+    <input type="text" placeholder="Email">
+    <input type="email" placeholder="Password">
+    <input type="password" placeholder="Confirm Password">
+    <div class="checkbox-container">
+      <label><input type="checkbox"> I agree terms terms conditions</label>
+      <label><input type="checkbox"> I agree data treatment</label>
+    </div>
+    <!-- Cambio aquí: ahora es un botón normal y utiliza (click) en lugar de type="submit" -->
+    <button type="button" class="signup-button" (click)="onSubmit()">Sign Up</button>
+  </form>
+</div>
