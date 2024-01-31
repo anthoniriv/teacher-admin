@@ -120,6 +120,15 @@
     height: calc(100vh - 64px);
   }
   
+
+  .return-to-login {
+    justify-content: center;
+    margin-top: 350px;
+    text-align: center; /* Centra el texto dentro del div */
+    width: 100%; /* Ajusta el ancho si es necesario */
+    /* No es necesario establecer un alto específico a menos que desees una altura fija */
+  }
+  
   .centered-content h1 {
     margin-bottom: 20px;
     color: black;
