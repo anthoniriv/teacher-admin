@@ -1,13 +1,44 @@
-.main{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 80vh;
-    button{
-      width: 500px;
-      height: 200px;
-      font-size: 2.5rem;
-    }
-  }
-  
+.main {
+  display: flex;
+  flex-direction: center; /* Cambiado a columna para centrar verticalmente */
+  justify-content: center; /* Centra el contenido en el eje principal */
+  align-items: center; /* Centra el contenido en el eje transversal */
+  height: 80vh;
+  position: relative; /* Relativo para posicionar absolutamente el botón de añadir juego */
+}
+
+.buttoncentral {
+  width: 500px;
+  height: 200px;
+  font-size: 2.5rem;
+  /* margin-top: 200px; No es necesario si está centrado */
+}
+
+.add-game-button-container {
+  position: absolute; /* Posiciona el contenedor del botón de añadir juego */
+  top: 0; /* Arriba del todo */
+  left: 0; /* Izquierda del todo */
+  padding: 10px; /* Espacio alrededor del botón */
+}
+
+button {
+  margin: 10px; /* Espacio uniforme alrededor de los botones */
+  width: 200px; /* Ancho estándar para los botones MACAWS y PARROTS */
+  height: 50px; /* Altura estándar para los botones MACAWS y PARROTS */
+  font-size: 1.25rem; /* Tamaño de fuente para los botones MACAWS y PARROTS */
+}
+
+/* Estilos específicos para el botón de añadir juego */
+button mat-raised-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto; /* Auto ajuste al contenido */
+  padding: 10px 20px; /* Espacio interior */
+  font-size: 1rem; /* Tamaño de fuente del botón de añadir juego */
+}
+
+mat-icon {
+  margin-left: 5px; /* Espacio entre el texto y el ícono */
+  /* Ajustes adicionales para el ícono si es necesario */
+}

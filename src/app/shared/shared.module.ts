@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { MaterialModule } from './material/material.module';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -10,7 +12,9 @@ import { MaterialModule } from './material/material.module';
   imports: [
     CommonModule,
     SharedRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatTabsModule,
+    MatDialogModule,
   ],
   exports: [
     MaterialModule

@@ -28,7 +28,7 @@
             </button>
           </p> 
           <p>
-            <button mat-button routerLink="/main/teachers">
+            <button mat-button routerLink="/main//teachers">
               <mat-icon>content_copy</mat-icon> Teachers
             </button>
           </p>
@@ -49,12 +49,16 @@
             routerLink="/main"/>
          </mat-toolbar>
            
-        <router-outlet></router-outlet>
-
-        <div class="centered-content">
-          <h1>RETURN TO LOGIN</h1>
-          <button mat-raised-button routerLink="/login">LOGIN</button>
+        <div *ngIf="isRootRoute">
+          <!-- Contenido que solo quieres mostrar en la ruta raíz de 'main' -->
+          <div class="return-to-login">
+            <h1>RETURN TO LOGIN</h1>
+            <button mat-raised-button routerLink="/login">LOGIN</button>
+          </div>
         </div>
+        
+        <router-outlet></router-outlet> 
       </mat-drawer-content>
       
 </mat-drawer-container>
+   

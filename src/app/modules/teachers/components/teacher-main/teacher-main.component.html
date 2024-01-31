@@ -1,0 +1,97 @@
+<div class="main"  *ngIf="isRootRoute">
+    <!-- noseque -->
+     <div class="top">
+       <h1>Add Teachers</h1>
+       <button mat-icon-button (click)="openModal()">
+         <mat-icon>add</mat-icon>
+       </button>
+       <mat-form-field appearance="outline" class="search-bar">
+         <mat-icon matPrefix>search</mat-icon>
+         <input matInput placeholder="Search">
+       </mat-form-field>
+       <mat-form-field class="filter">
+         <mat-label>Filter by</mat-label>
+         <mat-select>
+           <mat-option value="option1">Option 1</mat-option>
+           <mat-option value="option2">Option 2</mat-option>
+           <mat-option value="option3">Option 3</mat-option>
+         </mat-select>
+       </mat-form-field>
+     </div>
+   
+     <div class="down">
+       <table class="table">
+         <thead>
+           <tr>
+             <th><input type="checkbox" /></th>
+             <th>Teacher</th>
+             <th>Subscription Type</th>
+             <th>Classes</th>
+             <th>Students</th>
+             <th>Last Connection</th>
+             <th>Actions</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td><input type="checkbox" /></td>
+             <td>Javier A.</td>
+             <td>Free</td>
+             <td>1</td>
+             <td>44</td>
+             <td>04/08/2023</td>
+             <td class="action-buttons-container">
+               <button mat-icon-button class="action-button">
+                 ✏️
+               </button>
+               <button mat-icon-button class="action-button">
+                 🗑️
+               </button>
+               <button mat-icon-button routerLink="./classes" class="action-button">
+                 📊
+               </button>
+             </td>
+           </tr>
+           <tr>
+            <td><input type="checkbox" /></td>
+            <td>Javier A.</td>
+            <td>Free</td>
+            <td>1</td>
+            <td>44</td>
+            <td>04/08/2023</td>
+            <td class="action-buttons-container">
+              <button mat-icon-button class="action-button">
+                ✏️
+              </button>
+              <button mat-icon-button class="action-button">
+                🗑️
+              </button>
+              <button mat-icon-button class="action-button">
+                📊
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>Javier A.</td>
+            <td>Free</td>
+            <td>1</td>
+            <td>44</td>
+            <td>04/08/2023</td>
+            <td class="action-buttons-container">
+              <button mat-icon-button class="action-button">
+                ✏️
+              </button>
+              <button mat-icon-button class="action-button">
+                🗑️
+              </button>
+              <button mat-icon-button class="action-button">
+                📊
+              </button>
+            </td>
+          </tr>
+         </tbody>
+       </table>
+     </div>
+   </div>
+   <router-outlet></router-outlet>
