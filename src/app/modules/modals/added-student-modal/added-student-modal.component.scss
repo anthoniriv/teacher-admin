@@ -1,49 +1,47 @@
 .modal {
-  display: flex;
-  position:absolute;
-  width: 90%;
-  background-color: white;
+  width: 80%; /* O el ancho deseado */
   padding: 20px;
-  border: 1px solid #000;
-  border-radius: 8px;
-  background-color: aqua;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.close-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-size: 1.5rem;
+  position: relative; /* Para posicionar absolutamente el botón de cierre */
+  border-radius: 5px; /* Para bordes redondeados */
+  display: flex; /* Añadido para utilizar flexbox */
+  justify-content: center; /* Alinea al centro */
+  align-items: center; /* Centra verticalmente */
 }
 
 .modal-content {
-  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  margin-right: -50px;
+  width: 100%; /* Ocupa todo el ancho del modal */
 }
 
 .modal-instructions {
-  border-left: 4px solid black;
-  padding-left: 10px;
-  margin: 10px 0;
+  width: 100%; /* Ajusta el ancho como prefieras */
+  margin-right: 80px;
+  margin-top: 20px;
+  text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .modal-instructions p {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-size: 0.9em;
 }
 
 .student-list {
-  padding-left: 14px;
+  width: 50%; /* Ajusta el ancho como prefieras */
+  text-align: left; /* Alinea el texto a la izquierda */
 }
 
 .student-list p {
-  margin: 4px 0;
+  margin: 5px 0;
+  padding-right: -80px;
+  line-height: 1.4;
 }
 
+
+// .close-button {
+//   background: none;
+//   border: none;
+//   cursor: pointer;
+//   font-size: 1.5em;
+// }
