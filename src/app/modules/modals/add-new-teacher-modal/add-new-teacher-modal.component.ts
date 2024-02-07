@@ -22,4 +22,5 @@ export class AddNewTeacherModalComponent {
   onCloseClick(): void {
     this['dialogRef'].close();
   }
+  
 }
