@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { MatTabsModule } from '@angular/material/tabs';
-
 import { MatDialog } from '@angular/material/dialog';
 import { AddedStudentModalComponent } from '../added-student-modal/added-student-modal.component';
 
@@ -16,8 +13,7 @@ export class AddNewStudentModalComponent {
 
   openAddedStudentModal() {
     const dialogRef = this.dialog.open(AddedStudentModalComponent, {
-      width: '600px',
-      // ...otros ajustes para tu modal
+      width: '400px',
     });
 
    

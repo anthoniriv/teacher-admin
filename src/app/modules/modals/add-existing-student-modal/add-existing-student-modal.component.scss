@@ -1,26 +1,32 @@
 .students-container {
-  font-family: 'Arial', sans-serif;
-  border: 1px solid #000;
-  padding: 20px;
-  width: auto; /* O el ancho que necesites */
+  position: relative; /* Esto es necesario para el posicionamiento absoluto del botón */
+  padding: 10px;
+  width: 92%;
+  flex-direction: column;
+  align-items: center;
 }
 
 .students-header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
+  justify-content: left;
+  align-items: left;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-.close-button {
-  cursor: pointer;
-  border: none;
-  background: none;
+.students-table-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .students-table {
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
   border-collapse: collapse;
+  margin-bottom: 70px; /* Espacio adicional en la parte inferior para el botón */
 }
 
 .students-table th,
@@ -31,11 +37,15 @@
 }
 
 .students-table th {
-  background-color: #f2f2f2;
+  width: max-content;
 }
 
 .add-button {
-  margin-top: 20px;
-  padding: 10px 20px;
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  border: 1px solid black;
   cursor: pointer;
 }

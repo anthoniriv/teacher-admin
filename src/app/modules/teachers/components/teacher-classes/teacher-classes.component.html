@@ -23,7 +23,7 @@
       <h1>Class 01</h1>
       <img src="../assets/img/teach.png" width="100px">
       <div class="buttons">
-        <button mat-button routerLink="/classes/progress">Students</button>
+        <button mat-button [routerLink]="'/main/teachers/students'">Students</button>
         <button mat-button [matMenuTriggerFor]="settings">Config</button>
         <mat-menu #settings="matMenu" class="matConfig">
           <button mat-menu-item (click)="openEditModal(clase)"><mat-icon>edit</mat-icon>Edit</button>

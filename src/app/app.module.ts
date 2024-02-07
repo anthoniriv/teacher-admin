@@ -7,8 +7,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
-import { AddExistingStudentModalComponent } from './modules/modals/add-existing-student-modal/add-existing-student-modal.component';
-import { AddNewStudentModalComponent } from './modules/modals/add-new-student-modal/add-new-student-modal.component';
 import { AddedStudentModalComponent } from './modules/modals/added-student-modal/added-student-modal.component';
 import { EditClassModalComponent } from './modules/modals/edit-class-modal/edit-class-modal.component';
 import { EmailConfirmationModalComponent } from './modules/modals/email-confirmation-modal/email-confirmation-modal.component';
@@ -19,6 +17,11 @@ import { VideoModalComponent } from './modules/modals/video-modal/video-modal.co
 import { MoreUnitsModalComponent } from './modules/modals/more-units-modal/more-units-modal.component';
 import { AddNewTeacherModalComponent } from './modules/modals/add-new-teacher-modal/add-new-teacher-modal.component';
 import { ProgressStudentModalComponent } from './modules/modals/progress-student-modal/progress-student-modal.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { EditStudentModalComponent } from './modules/modals/edit-student-modal/edit-student-modal.component';
+import { AddExistingStudentModalComponent } from './modules/modals/add-existing-student-modal/add-existing-student-modal.component';
+import { AddNewStudentModalComponent } from './modules/modals/add-new-student-modal/add-new-student-modal.component';
 
 @NgModule({
   declarations: [
@@ -36,10 +39,15 @@ import { ProgressStudentModalComponent } from './modules/modals/progress-student
     MoreUnitsModalComponent,
     AddNewTeacherModalComponent,
     ProgressStudentModalComponent,
+    EditClassModalComponent,
+    EditStudentModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
+    MatFormFieldModule,
+    MatInputModule,
     BrowserAnimationsModule,
     SharedModule,
     MatTabsModule,

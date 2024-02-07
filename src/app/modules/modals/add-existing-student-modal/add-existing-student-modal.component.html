@@ -1,24 +1,33 @@
 <div class="students-container">
   <div class="students-header">
-    <h2>Teachers</h2>
-    <button class="close-button" (click)="closeModal() " mat-icon-button mat-dialog-close>X</button>
+    <h2>Students</h2>
   </div>
-  <table class="students-table">
-    <thead>
-      <tr>
-        <th><input type="checkbox"></th>
-        <th>Name</th>
-        <th>Lastname</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><input type="checkbox"></td>
-        <td>Javier A.</td>
-        <td>Lastname</td>
-      </tr>
-      <!-- Repite las filas para cada estudiante -->
-    </tbody>
-  </table>
-  <button class="add-button">Add</button>
+  <div class="students-table-container">
+    <mat-table [dataSource]="dataSource" class="students-table">
+      
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox></mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox></mat-checkbox>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="lastname">
+        <th mat-header-cell *matHeaderCellDef> Lastname </th>
+        <td mat-cell *matCellDef="let row"> {{row.lastname}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </mat-table>
+  </div>
+  
+  <button mat-button class="add-button">Add</button>
 </div>

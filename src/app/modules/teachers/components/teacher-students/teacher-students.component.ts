@@ -1,7 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { SelectionModel } from '@angular/cdk/collections';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { AddExistingStudentModalComponent } from 'src/app/modules/modals/add-existing-student-modal/add-existing-student-modal.component';
 import { AddNewStudentModalComponent } from 'src/app/modules/modals/add-new-student-modal/add-new-student-modal.component';
+import { EditClassModalComponent } from 'src/app/modules/modals/edit-class-modal/edit-class-modal.component';
+import { EditStudentModalComponent } from 'src/app/modules/modals/edit-student-modal/edit-student-modal.component';
+import { ProgressStudentModalComponent } from 'src/app/modules/modals/progress-student-modal/progress-student-modal.component';
 
 @Component({
   selector: 'app-teacher-students',
@@ -10,37 +16,99 @@ import { AddNewStudentModalComponent } from 'src/app/modules/modals/add-new-stud
 })
 export class TeacherStudentsComponent implements OnInit {
   currentComponent: string | null = null;
-  students: any[] = [];
+  students: any[] = [
+    {
+      name: 'Juan Perez',
+      dateAdded: '15/01/2023',
+      lastConnection: '01/02/2023'
+    },
+    {
+      name: 'Alberto Perez',
+      dateAdded: '15/01/2023',
+      lastConnection: '01/02/2023'
+    },
+    {
+      name: 'Maria Perez',
+      dateAdded: '15/01/2023',
+      lastConnection: '01/02/2023'
+    },
+    
+  ];
+
+  displayedColumns: string[] = ['checkbox', 'name', 'dateAdded', 'lastConnection', 'actions'];
+  dataSource = new MatTableDataSource(this.students);
+
+  @ViewChild(MatSort, { static: true })
+  sort: MatSort = new MatSort;
 
   constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    // Aquí podrías cargar los estudiantes si tienes un servicio para hacerlo
+    this.dataSource.sort = this.sort;
   }
 
   openAddExistingStudentModal() {
     const dialogRef = this.dialog.open(AddExistingStudentModalComponent, {
-      width: '600px',
-      // Puedes pasar datos al modal si es necesario
+      width: '300px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The add existing student dialog was closed');
-      // Aquí puedes manejar lo que sucede después de cerrar el modal
     });
   }
 
   openAddNewStudentModal() {
     const dialogRef = this.dialog.open(AddNewStudentModalComponent, {
       width: '600px',
-      // Puedes pasar datos al modal si es necesario
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The add new student dialog was closed');
-      // Aquí puedes manejar lo que sucede después de cerrar el modal
+      if (result) {
+        this.students.push(result); 
+        this.dataSource.data = this.students; 
+      }
     });
   }
 
-  // ...resto de tu código...
+  openEditStudentModal(studentData: any) {
+    this.dialog.open(EditStudentModalComponent, {
+      width: '600px',
+      data: studentData
+    });
+  }
+
+  openProgressStudentModal(studentData: any) {
+    this.dialog.open(ProgressStudentModalComponent, {
+      width: '1200px',
+      data: studentData
+    });
+  }
+
+  hasStudents(): boolean {
+    return this.dataSource.data.length > 0;
+  }
+
+  selection = new SelectionModel<any>(true, []);
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach(row => this.selection.select(row));
+  }
+
+  checkboxLabel(row?: any): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
+  }
+
 }

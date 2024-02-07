@@ -1,0 +1,28 @@
+
+<mat-dialog-content class="edit-class-modal-content">
+  <div class="modal-header">
+    <h2>Edit Student</h2>
+    <!-- <button mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button> -->
+  </div>
+  <form class="modal-form">
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="class-name">
+        <mat-label>Edit Student Name</mat-label>
+        <input matInput placeholder="">
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="name">
+        <mat-label>Edit Student Class</mat-label>
+        <input matInput placeholder="">
+      </mat-form-field>
+    </div>
+    <mat-form-field appearance="outline" class="description">
+      <mat-label>Short Description</mat-label>
+      <textarea matInput placeholder=""></textarea>
+    </mat-form-field>
+    <div class="button-container">
+      <button mat-button (click)="saveChanges()">Save Changes</button>
+    </div>
+  </form>
+</mat-dialog-content>

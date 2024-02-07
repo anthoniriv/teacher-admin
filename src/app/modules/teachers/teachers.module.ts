@@ -33,6 +33,8 @@ import { MaterialModule } from 'src/app/shared/material/material.module';
     TeachersRoutingModule,
     MatIconModule,
     MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,

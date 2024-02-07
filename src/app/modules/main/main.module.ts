@@ -10,6 +10,8 @@ import { ContentComponent } from '../content/content.component';
 import { LoginComponent } from '../login/login.component';
 import { ParrotsComponent } from '../content/components/parrots/parrots.component';
 import { MacawsComponent } from '../content/components/macaws/macaws.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { MacawsComponent } from '../content/components/macaws/macaws.component';
   imports: [
     CommonModule,
     SharedModule,
+    MatFormFieldModule,
+    MatInputModule,
     MaterialModule,
     MainRoutingModule,
   ],

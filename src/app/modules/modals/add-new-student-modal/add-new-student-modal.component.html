@@ -1,25 +1,15 @@
 <div class="modal">
-  <div class="modal-header">
-    <button class="close-button" mat-icon-button mat-dialog-close>X</button>
-  </div>
-
   <mat-tab-group>
     <mat-tab label="Add new Student">
       <div class="tab-content">
         <div class="input-with-icon">
-          <label for="nameInput">Copy a list of Student</label>
+          <label for="nameInput">Copy a list of students</label>
           <button class="icon-button" (click)="openAddedStudentModal()">
             <mat-icon>info_outline</mat-icon>
           </button>
         </div>
         <textarea id="nameInput" placeholder="Paste names here..."></textarea>
-        <button class="add-button">Add</button>
-      </div>
-    </mat-tab>
-    <mat-tab label="Add a list of Student">
-      <div class="tab-content">
-        <label>Add a list of Student</label>
-        <textarea placeholder="Paste list here"></textarea>
+        <button mat-button class="add-button">Add</button>
       </div>
     </mat-tab>
   </mat-tab-group>

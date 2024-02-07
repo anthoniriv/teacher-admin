@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-add-existing-student-modal',
@@ -7,6 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AddExistingStudentModalComponent {
   dialogRef: any;
+  displayedColumns: string[] = ['select', 'name', 'lastname'];
+  dataSource = new MatTableDataSource([
+    { name: 'Javier A.', lastname: 'Lastname' },
+    { name: 'Javier A.', lastname: 'Lastname' },
+    { name: 'Javier A.', lastname: 'Lastname' }
+  ]);
   closeModal(): void {
     this.dialogRef.close();
   }
