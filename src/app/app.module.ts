@@ -18,6 +18,7 @@ import { VerifyAccountModalComponent } from './modules/modals/verify-account-mod
 import { VideoModalComponent } from './modules/modals/video-modal/video-modal.component';
 import { MoreUnitsModalComponent } from './modules/modals/more-units-modal/more-units-modal.component';
 import { AddNewTeacherModalComponent } from './modules/modals/add-new-teacher-modal/add-new-teacher-modal.component';
+import { ProgressStudentModalComponent } from './modules/modals/progress-student-modal/progress-student-modal.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AddNewTeacherModalComponent } from './modules/modals/add-new-teacher-mo
     VideoModalComponent,
     MoreUnitsModalComponent,
     AddNewTeacherModalComponent,
+    ProgressStudentModalComponent,
   ],
   imports: [
     BrowserModule,

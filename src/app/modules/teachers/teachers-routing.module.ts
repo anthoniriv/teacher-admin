@@ -11,19 +11,17 @@ const routes: Routes = [
 
   {
     path: '',
-    component: TeacherMainComponent,
-    children: [
-      {
-        path: 'classes',
-        component: TeacherClassesComponent,
-      },
-      {
-        path: 'students',
-        component: TeacherStudentsComponent,
-      },
-      // ... otras rutas hijas ...
-    ],
+    component: TeacherMainComponent, 
   },
+  {
+    path: 'classes',
+    component: TeacherClassesComponent,
+  },
+  {
+    path: 'students',
+    component: TeacherStudentsComponent,
+  },
+  // ... otras rutas hijas ...
   
 ];
 

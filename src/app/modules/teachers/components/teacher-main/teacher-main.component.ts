@@ -1,45 +1,109 @@
-import { Component, OnInit } from '@angular/core';
+import { SelectionModel } from '@angular/cdk/collections';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
-import { AddExistingStudentModalComponent } from 'src/app/modules/modals/add-existing-student-modal/add-existing-student-modal.component';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 import { AddNewStudentModalComponent } from 'src/app/modules/modals/add-new-student-modal/add-new-student-modal.component';
-import { EditClassModalComponent } from 'src/app/modules/modals/edit-class-modal/edit-class-modal.component';
+import { ProgressStudentModalComponent } from 'src/app/modules/modals/progress-student-modal/progress-student-modal.component';
 
 @Component({
   selector: 'app-teacher-main',
   templateUrl: './teacher-main.component.html',
   styleUrls: ['./teacher-main.component.scss']
 })
-export class TeacherMainComponent implements OnInit {
-  currentComponent: string | null = null; // Variable para almacenar el componente actual
-  students: any[] = []; // Inicializa students como un arreglo vacío
 
-  constructor(public dialog: MatDialog, private router: Router) {}
+export class TeacherMainComponent implements OnInit {
+
+  teachers: any = [
+    {
+      teacher: 'Ana Gomez',
+      subscriptionType: 'Pro',
+      classes: '4',
+      students: '12', 
+      lastConnection: '02/02/2024'
+    },
+    {
+      teacher: 'Ana Gomez',
+      subscriptionType: 'Normal',
+      classes: '4',
+      students: '12', 
+      lastConnection: '02/02/2024'
+    },
+    {
+      teacher: 'Ana Gomez',
+      subscriptionType: 'Premium',
+      classes: '4',
+      students: '12',
+      lastConnection: '02/02/2024'
+    }
+  ];
+
+  displayedColumns: string[] = ['checkbox', 'teacher', 'subscriptionType', 'classes', 'students', 'lastConnection', 'actions']; 
+  dataSource = new MatTableDataSource(this.teachers);
+
+  @ViewChild(MatSort, { static: true })
+  sort: MatSort = new MatSort;
+  
+
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    // En lugar de lanzar un error, puedes inicializar datos o realizar llamadas a servicios aquí.
+    this.dataSource.sort = this.sort;
   }
 
   openModal() {
-    const dialogRef = this.dialog.open(EditClassModalComponent, {
+    const dialogRef = this.dialog.open(AddNewStudentModalComponent, {
       width: '600px',
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      // Aquí podrías verificar si se agregó un estudiante y actualizar la lista accordingly
+      if (result) {
+        this.teachers.push(result);  // Cambio aquí
+        this.dataSource.data = this.teachers; // Cambio aquí
+      }
     });
   }
 
-  // Método para verificar si hay estudiantes en la lista
-  hasStudents(): boolean {
-    return this.students && this.students.length > 0;
+  openProgressTeacherModal(teacherData: any) {
+    this.dialog.open(ProgressStudentModalComponent, {
+      width: '1200px',
+      data: teacherData
+    });
+  }
+
+   hasTeachers(): boolean { // Cambio aquí
+    return this.dataSource.data.length > 0;
+  }
+
+  openEditTeacherModal(teacherData: any) { // Cambio aquí
+    this.dialog.open(AddNewStudentModalComponent, { // Asegúrate de que AddNewTeacherModalComponent exista y esté importado correctamente
+      width: '600px',
+      data: teacherData
+    });
+  }
+
+  selection = new SelectionModel<any>(true, []);
+  
+
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
+
+ 
+  masterToggle() {
+    this.isAllSelected() ?
+        this.selection.clear() :
+        this.dataSource.data.forEach(row => this.selection.select(row));
   }
 
 
-  get isRootRoute() {
-    // Comprueba si la ruta actual es la raíz del módulo Main
-    return this.router.url === '/main/teachers';
+  checkboxLabel(row?: any): string {
+    if (!row) {
+      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+    }
+    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
 }
-

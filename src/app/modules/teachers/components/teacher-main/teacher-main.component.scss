@@ -1,107 +1,116 @@
 .main {
-    display: colum;
-    align-items: center;
-    justify-content: flex;
-    margin: 30px;
-  }
-  
-  .top {
-    display: flex;
-    gap: 5px;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 10px;
-    width: 100%;
-  }
-  
-  mat-icon-button {
-    color: #2979ff;
-  }
-  
-  h1 {
-    margin: 0;
-  }
-  
-  .search-bar, .filter {
-    margin-top: 20px;
-  }
-  
-  .filter {
-    width: auto; /* Si quieres que el filtro también sea automático */
-  }
-  
-  .search-bar {
-    max-width: 550px; /* Ancho máximo para el search bar */
-    width: 45%; /* Esto hará que el search bar sea automático */
-  }
-  
-  /* Mueve el elemento .contacts a la derecha */
-  .contacts {
-    margin-left: auto;
-    margin-right: 10px;
-  }
-  
-  .down {
-    margin: 20px;
-    margin-right: 150px; 
-    margin-left: 50px;
-    padding-top: 10px;
-    width: calc(100% - 120px); /* Resta el margen derecho del ancho total */
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #0000005e;
-  }
-  
-  thead {
-    background-color: #f4f4f4;
-  }
-  
-  th, td {
-    text-align: center;
-    padding: 8px;
-  }
-  
-  th {
-    position: sticky;
-    top: 0;
-    background-color: #f4f4f4;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  td[colspan="5"] {
-    text-align: center;
-  }
-  
-  /* Estilo para el mensaje cuando no hay datos */
-  .nodata {
-    text-align: center;
-    padding: 20px;
-    font-style: italic;
-    color: grey;
-  }
-  
-  .action-buttons-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-  }
-  
-  .action-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  width: 100%; 
+  margin-bottom: 20px;
+}
+
+.title {
+  position: relative;
+  margin-right: 50px; 
+  gap: 10px;
+}
+
+.title button {
+  position: absolute;
+  top: -10px; 
+  right: -50px;
+}
+
+
+.search-bar, .filter {
+  width: 300px;
+  margin-left: 10px;
+}
+
+
+button[mat-icon-button] {
+  margin-left: 5px; 
+}
+
+
+.contacts {
+  margin-left: auto;
+}
+
+.down, .down img {
+  margin: 20px;
+  padding-top: 10px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.mat-elevation-z8 {
+  margin: auto;
+  padding: 50px;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  width: 5%;
+  height: 5%;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+.action-buttons-container {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  align-items: left;
+  gap: 5px;
+}
+
+.action-button, .buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.action-button img, .action-button svg {
+  width: 24px;
+  height: auto;
+}
+
+.mat-sort-header-arrow,
+.mat-sort-header-indicator {
+  color: rgba(0, 0, 0, 0.87);
+  visibility: visible !important;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+::ng-deep .mat-menu-panel.matConfig {
+  transform: translateY(-100%) translateX(40%);
+}

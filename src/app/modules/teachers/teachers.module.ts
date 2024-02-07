@@ -8,6 +8,14 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { TeacherClassesComponent } from './components/teacher-classes/teacher-classes.component';
 import { TeacherStudentsComponent } from './components/teacher-students/teacher-students.component';
 import { TeacherMainComponent } from './components/teacher-main/teacher-main.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 
 @NgModule({
@@ -20,8 +28,16 @@ import { TeacherMainComponent } from './components/teacher-main/teacher-main.com
   imports: [
     CommonModule,
     SharedModule,
+    MaterialModule,
     MatTabsModule,
-    TeachersRoutingModule
+    TeachersRoutingModule,
+    MatIconModule,
+    MatSortModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatCheckboxModule
   ]
 })
 export class TeachersModule { }
