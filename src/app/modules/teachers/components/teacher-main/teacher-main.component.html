@@ -68,7 +68,7 @@
           <button mat-icon-button class="action-button" [routerLink]="'/main/teachers/classes'">
             <img src="../assets/img/eye.svg" width="24" height="24"/>
           </button>
-          <button mat-icon-button class="action-button">
+          <button mat-icon-button class="action-button" (click)="openEditStudentModal(teacher)">
             <img src="../assets/img/edit.svg" width="24" height="24"/>
           </button>
           <button mat-icon-button class="action-button">

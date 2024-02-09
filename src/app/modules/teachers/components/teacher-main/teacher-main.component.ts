@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AddNewStudentModalComponent } from 'src/app/modules/modals/add-new-student-modal/add-new-student-modal.component';
+import { EditStudentModalComponent } from 'src/app/modules/modals/edit-student-modal/edit-student-modal.component';
+import { EditTeacherModalComponent } from 'src/app/modules/modals/edit-teacher-modal/edit-teacher-modal.component';
 import { ProgressStudentModalComponent } from 'src/app/modules/modals/progress-student-modal/progress-student-modal.component';
 
 @Component({
@@ -43,6 +45,7 @@ export class TeacherMainComponent implements OnInit {
 
   @ViewChild(MatSort, { static: true })
   sort: MatSort = new MatSort;
+  teacher: any;
   
 
   constructor(public dialog: MatDialog) {}
@@ -76,13 +79,6 @@ export class TeacherMainComponent implements OnInit {
     return this.dataSource.data.length > 0;
   }
 
-  openEditTeacherModal(teacherData: any) { // Cambio aquí
-    this.dialog.open(AddNewStudentModalComponent, { // Asegúrate de que AddNewTeacherModalComponent exista y esté importado correctamente
-      width: '600px',
-      data: teacherData
-    });
-  }
-
   selection = new SelectionModel<any>(true, []);
   
 
@@ -106,4 +102,19 @@ export class TeacherMainComponent implements OnInit {
     }
     return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${row.position + 1}`;
   }
+  openEditStudentModal(teacherData: any) {
+    const dialogRef = this.dialog.open(EditTeacherModalComponent, {
+      width: '600px',
+      data: teacherData // Aquí pasas los datos al modal, como el estudiante a editar
+    });
+  
+    dialogRef.afterClosed().subscribe((result: { saved: any; }) => {
+      console.log('El modal fue cerrado');
+      if (result?.saved) {
+        // Aquí manejas lo que sucede después de que el modal se cierra, por ejemplo, recargar datos.
+        console.log('Cambios guardados');
+      }
+    });
+  }
+
 }

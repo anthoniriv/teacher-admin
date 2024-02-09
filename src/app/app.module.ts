@@ -22,6 +22,7 @@ import { EditStudentModalComponent } from './modules/modals/edit-student-modal/e
 import { AddExistingStudentModalComponent } from './modules/modals/add-existing-student-modal/add-existing-student-modal.component';
 import { AddNewStudentModalComponent } from './modules/modals/add-new-student-modal/add-new-student-modal.component';
 import { AddedStudentModalComponent } from './modules/modals/added-student-modal/added-student-modal.component';
+import { EditTeacherModalComponent } from './modules/modals/edit-teacher-modal/edit-teacher-modal.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { AddedStudentModalComponent } from './modules/modals/added-student-modal
     ProgressStudentModalComponent,
     EditClassModalComponent,
     EditStudentModalComponent,
+    EditTeacherModalComponent,
   ],
   imports: [
     BrowserModule,

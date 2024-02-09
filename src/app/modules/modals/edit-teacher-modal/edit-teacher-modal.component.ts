@@ -2,14 +2,14 @@ import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-edit-student-modal',
-  templateUrl: './edit-student-modal.component.html',
-  styleUrls: ['./edit-student-modal.component.scss']
+  selector: 'app-edit-teacher-modal',
+  templateUrl: './edit-teacher-modal.component.html',
+  styleUrls: ['./edit-teacher-modal.component.scss']
 })
-export class EditStudentModalComponent {
+export class EditTeacherModalComponent {
   dialog: any;
   constructor(
-    public dialogRef: MatDialogRef<EditStudentModalComponent>,
+    public dialogRef: MatDialogRef<EditTeacherModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
 
