@@ -1,62 +1,66 @@
-<div class="main">
+<h1 class="title">Profile</h1>
 
-    <div class="content">
-      <div class="top">
-  
-        <div class="account">
-          <h1>Account</h1>
-          <div class="card-account">
-            <mat-form-field appearance="outline">
-              <mat-label>Email</mat-label>
-              <input matInput>
-            </mat-form-field>
-            <mat-form-field appearance="outline">
-              <mat-label>Password</mat-label>
-              <input matInput>
-            </mat-form-field>
-            <button mat-button>Change password</button>
-            <button mat-button>Delete Account</button>
+<div class="main">
+  <div class="content">
+    <div class="top">
+      <div class="account">
+        <h1 class="title-account">Account</h1>
+        <div class="card-account">
+          <h1 class="mail">Email</h1>
+          <div class="custom-input-container">
+            <input
+              id="email"
+              class="custom-password"
+              type="email"
+              placeholder="Email"
+              class="custom-input"
+            />
           </div>
+          <h1 class="pass">Password</h1>
+          <div class="custom-input-container">
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              class="custom-input"
+            />
+          </div>
+          <button class="changebtn" mat-button>Change password</button>
+          <button class="deletebtn" mat-button>Delete Account</button>
         </div>
-  
-        <div class="subscription">
-          <!-- <h1>Subscription</h1>
-          <div class="sub-container">
-            <div class="img-container">
-              <img src="../assets/img/suscr.png"
-                class="suscr"
-              />
-              <img src="../assets/img/pastel.png"
-                class="pastel"
-              />
-            </div>
-            <button mat-button>Upgrade subscription</button>
-            <button mat-button>Cancel subscription</button>
-          </div> -->
-  
-        </div>
-  
       </div>
-  
-      <div class="down">
-        <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Info</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Info</mat-label>
-          <input matInput>
-        </mat-form-field>
+
+      <div class="subscription">
+        <h1 class="title-sub">Subscription</h1>
+        <div class="sub-container">
+          <div class="tipesub"></div>
+          <div class="img-container">
+            <img src="../assets/img/circleorange.svg" class="pastel" />
+            <h1 class="porcent">% Seats avaiable</h1>
+          </div>
+          <button class="upgradebtn" mat-button>Upgrade subscription</button>
+          <button class="cancelbtn" mat-button>Cancel subscription</button>
+        </div>
       </div>
     </div>
-  
-  
-    <div class="left">
-      <div class="square"></div>
+
+    <div class="down">
+      <h1 class="name">Name</h1>
+      <div class="custom-input-container">
+        <input type="text" placeholder="Name" class="custom-input" />
+      </div>
+      <h1 class="info">Info</h1>
+      <div class="custom-input-container">
+        <input type="text" placeholder="Info" class="custom-input" />
+      </div>
+      <h1 class="info">Info</h1>
+      <div class="custom-input-container-end">
+        <input type="text" placeholder="Info" class="custom-input" />
+      </div>
     </div>
   </div>
-  
+
+  <div class="left">
+    <div class="square"></div>
+  </div>
+</div>

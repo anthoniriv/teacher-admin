@@ -1,11 +1,26 @@
-
-<h1 class="h1">LORITOS WORLD FOR TEACHERS</h1>
-<div class="login-container">
-  <form class="login-form">
-    <input type="text" placeholder="Email" />
-    <input type="password" placeholder="Password" />
-    <button type="button" class="login-button" (click)="openVerifyAccountModal()">Login</button>
-    <div class="separator"></div>
-    <button type="button" class="signup-button" (click)="openSignUpModal()">Sign Up</button>
-  </form>
+<div class="img">
+  <div class="main">
+    <div class="title">
+      <h1>Login</h1>
+    </div>
+    <div class="login-container">
+      <form class="login-form">
+        <h1>Email</h1>
+        <input type="text" placeholder="Email" />
+        <h1>Password</h1>
+        <input type="password" placeholder="Password" />
+        <button
+          type="button"
+          class="login-button"
+          (click)="openVerifyAccountModal()"
+        >
+          Login
+        </button>
+        <div class="separator"></div>
+        <button type="button" class="signup-button" (click)="openSignUpModal()">
+          Sign Up
+        </button>
+      </form>
+    </div>
+  </div>
 </div>
