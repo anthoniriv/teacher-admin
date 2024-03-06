@@ -15,7 +15,9 @@ import { ProgressStudentModalComponent } from 'src/app/modules/modals/progress-s
 })
 
 export class TeacherMainComponent implements OnInit {
-
+openProgressStudentModal(arg0: any) {
+throw new Error('Method not implemented.');
+}
   teachers: any = [
     {
       teacher: 'Ana Gomez',
@@ -46,6 +48,8 @@ export class TeacherMainComponent implements OnInit {
   @ViewChild(MatSort, { static: true })
   sort: MatSort = new MatSort;
   teacher: any;
+  color = '#65447C';
+  students: any;
   
 
   constructor(public dialog: MatDialog) {}
@@ -68,6 +72,7 @@ export class TeacherMainComponent implements OnInit {
     });
   }
 
+  // abre progreso del estudiante
   openProgressTeacherModal(teacherData: any) {
     this.dialog.open(ProgressStudentModalComponent, {
       width: '1200px',

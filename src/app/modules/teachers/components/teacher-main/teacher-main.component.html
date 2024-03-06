@@ -1,9 +1,9 @@
 <div class="main">
   <div class="top">
     <div class="title">
-      <h1>Add Teachers</h1>
-      <button mat-icon-button (click)="openModal()">
-        <mat-icon>add</mat-icon>
+      <h1 class="title-h1">Add Teacher</h1>
+      <button mat-icon-button class="add-btn" (click)="openModal()">
+        <img class="add-icon" src="../assets/img/Addclass icon.svg" />
       </button>
     </div>
     <mat-form-field appearance="outline" class="search-bar">
@@ -18,19 +18,23 @@
         <mat-option value="option3">Option 3</mat-option>
       </mat-select>
     </mat-form-field>
-    <div class="contacts">
-      <h1>{{teachers.length}} Teachers</h1>
-    </div>
+
   </div>
   <div class="down">
-    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 tablemat">
+    <table mat-table [dataSource]="dataSource" matSort class="tablemat">
       <ng-container matColumnDef="checkbox">
-        <th mat-header-cell *matHeaderCellDef>
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          [style.background-color]="color"
+          style="border-radius: 10px 0 0 10px"
+        >
           <mat-checkbox
             (change)="$event ? masterToggle() : null"
             [checked]="selection.hasValue() && isAllSelected()"
             [indeterminate]="selection.hasValue() && !isAllSelected()"
-            [aria-label]="checkboxLabel()">
+            [aria-label]="checkboxLabel()"
+          >
           </mat-checkbox>
         </th>
         <td mat-cell *matCellDef="let row">
@@ -38,46 +42,107 @@
             (click)="$event.stopPropagation()"
             (change)="$event ? selection.toggle(row) : null"
             [checked]="selection.isSelected(row)"
-            [aria-label]="checkboxLabel(row)">
+            [aria-label]="checkboxLabel(row)"
+          >
           </mat-checkbox>
         </td>
       </ng-container>
       <ng-container matColumnDef="teacher">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Teacher </th>
-        <td mat-cell *matCellDef="let teacher"> {{teacher.teacher}} </td>
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="text-center"
+          [style.background-color]="color"
+        >
+          Teacher
+        </th>
+        <td mat-cell *matCellDef="let teacher">{{ teacher.teacher }}</td>
       </ng-container>
       <ng-container matColumnDef="subscriptionType">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Subscription Type </th>
-        <td mat-cell *matCellDef="let teacher"> {{teacher.subscriptionType}} </td>
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="text-center"
+          [style.background-color]="color"
+        >
+          Subscription Type
+        </th>
+        <td mat-cell *matCellDef="let teacher">{{ teacher.subscriptionType }}</td>
       </ng-container>
       <ng-container matColumnDef="classes">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Classes </th>
-        <td mat-cell *matCellDef="let teacher"> {{teacher.classes}} </td>
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="text-center"
+          [style.background-color]="color"
+        >
+          Classes
+        </th>
+        <td mat-cell *matCellDef="let teacher">{{ teacher.students }}</td>
       </ng-container>
       <ng-container matColumnDef="students">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Students </th>
-        <td mat-cell *matCellDef="let teacher"> {{teacher.students}} </td>
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="text-center"
+          [style.background-color]="color"
+        >
+          Students
+        </th>
+        <td mat-cell *matCellDef="let teacher">{{ teacher.students }}</td>
       </ng-container>
       <ng-container matColumnDef="lastConnection">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="text-center"> Last Connection </th>
-        <td mat-cell *matCellDef="let teacher"> {{teacher.lastConnection}} </td>
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+          class="text-center"
+          [style.background-color]="color"
+        >
+          Last Connection
+        </th>
+        <td mat-cell *matCellDef="let teacher">{{ teacher.lastConnection }}</td>
       </ng-container>
       <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef class="text-center"> Actions </th>
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          class="text-center"
+          [style.background-color]="color"
+          style="border-radius: 0 10px 10px 0"
+        >
+          Actions
+        </th>
         <td mat-cell *matCellDef="let teacher" class="action-buttons-container">
-          <button mat-icon-button class="action-button" [routerLink]="'/main/teachers/classes'">
+          <div style="margin: auto; display: flex; flex-direction: row">
+            <button
+              mat-icon-button
+              class="action-button"
+              routerLink="./classes"
+            >
             <img src="../assets/img/eye.svg" width="24" height="24"/>
-          </button>
-          <button mat-icon-button class="action-button" (click)="openEditStudentModal(teacher)">
-            <img src="../assets/img/edit.svg" width="24" height="24"/>
-          </button>
-          <button mat-icon-button class="action-button">
-            <img src="../assets/img/delete.svg" width="24" height="24"/>
-          </button>
+            </button>
+
+            <button mat-icon-button class="action-button"
+            (click)="openEditStudentModal(teacher)">
+              <img src="../assets/img/Edit icon.svg" width="24" height="24"/>
+            </button>
+
+            <button
+              mat-icon-button
+              class="action-button"
+            >
+            <img src="../assets/img/Trash icon.svg" width="24" height="24"/>
+            </button>
+          </div>
         </td>
       </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
   </div>
 </div>

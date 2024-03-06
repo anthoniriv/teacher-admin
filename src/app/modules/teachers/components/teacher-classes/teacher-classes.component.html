@@ -14,23 +14,87 @@
     </mat-form-field>
     <div class="return">
       <button mat-button class="btnreturn" routerLink="/main/teachers">
-        <span class="button-text">Return <mat-icon>arrow_back</mat-icon></span>
+        Return
+        <img
+          class="imgbtn"
+          src="../assets/img/Return icon.svg"
+          width="40px"
+          height="52px"
+        />
       </button>
     </div>
   </div>
   <div class="down">
-    <div class="classes">
-      <h1>Class 01</h1>
-      <img src="../assets/img/teach.png" width="100px">
-      <div class="buttons">
-        <button mat-button [routerLink]="'/main/teachers/students'">Students</button>
-        <button mat-button [matMenuTriggerFor]="settings">Config</button>
-        <mat-menu #settings="matMenu" class="matConfig">
-          <button mat-menu-item (click)="openEditModal(clase)"><mat-icon>edit</mat-icon>Edit</button>
-          <button mat-menu-item><mat-icon>delete</mat-icon>Delete</button>
-          <button mat-menu-item><mat-icon>upload</mat-icon>Credentials</button>
-        </mat-menu>
+    <div class="classes-container">
+      <div class="classes">
+        <h1>Class 01</h1>
+        <img src="../assets/img/teach.png" width="100px" />
+        <div class="buttons">
+          <button mat-button routerLink="../students">
+            <div class="button-container">
+              <img
+                src="../assets/img/Content icon.svg"
+                class="content-icon"
+                width="20"
+                height="20"
+              />
+              <p>Progress</p>
+            </div>
+          </button>
+          <button mat-button [matMenuTriggerFor]="settings" class="stng-btn">
+            <div class="button-container">
+              <img
+                src="../assets/img/Settings icon withe.svg"
+                class="content-icon"
+                width="20"
+                height="20"
+              />
+              <p>Settings</p>
+            </div>
+          </button>
+          <mat-menu mat-menu #settings="matMenu" class="matConfig">
+            <div class="div-menu">
+              <button  class="edit-button" (click)="openEditModal(clase)">
+                <div class="menu-container">
+                  <img
+                    src="../assets/img/Edit icon.svg"
+                    class="content-icon"
+                    width="20"
+                    height="20"
+                  />
+                  <p>Edit</p>
+                </div>
+              </button>
+              <button m class="delete-button">
+                <div class="menu-container">
+                  <img
+                    src="../assets/img/Delete icon.svg"
+                    class="content-icon"
+                    width="20"
+                    height="20"
+                  />
+                  <p>Delete</p>
+                </div>
+              </button>
+              <button  class="credentials-button">
+                <div class="menu-container">
+                  <img
+                    src="../assets/img/upload.svg"
+                    class="content-icon"
+                    width="20"
+                    height="20"
+                  />
+                  <p>Credentials</p>
+                </div>
+              </button>
+  
+            </div>
+            
+          </mat-menu>
+        </div>
       </div>
+  
+      
     </div>
   </div>
 </div>
