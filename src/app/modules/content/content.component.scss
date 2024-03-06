@@ -1,44 +1,52 @@
 .main {
-  display: flex;
-  flex-direction: center; /* Cambiado a columna para centrar verticalmente */
-  justify-content: center; /* Centra el contenido en el eje principal */
-  align-items: center; /* Centra el contenido en el eje transversal */
-  height: 80vh;
-  position: relative; /* Relativo para posicionar absolutamente el botón de añadir juego */
-}
-
-.buttoncentral {
-  width: 500px;
-  height: 200px;
-  font-size: 2.5rem;
-  /* margin-top: 200px; No es necesario si está centrado */
-}
-
-.add-game-button-container {
-  position: absolute; /* Posiciona el contenedor del botón de añadir juego */
-  top: 0; /* Arriba del todo */
-  left: 0; /* Izquierda del todo */
-  padding: 10px; /* Espacio alrededor del botón */
-}
-
-button {
-  margin: 10px; /* Espacio uniforme alrededor de los botones */
-  width: 200px; /* Ancho estándar para los botones MACAWS y PARROTS */
-  height: 50px; /* Altura estándar para los botones MACAWS y PARROTS */
-  font-size: 1.25rem; /* Tamaño de fuente para los botones MACAWS y PARROTS */
-}
-
-/* Estilos específicos para el botón de añadir juego */
-button mat-raised-button {
-  display: flex;
-  align-items: center;
+  display: row;
   justify-content: center;
-  width: auto; /* Auto ajuste al contenido */
-  padding: 10px 20px; /* Espacio interior */
-  font-size: 1rem; /* Tamaño de fuente del botón de añadir juego */
-}
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 50px;
+  button {
+    width: 525px;
+    height: 260px;
+    font-size: 3.5rem;
+  }
+  h1 {
+    color: #545fdf; /* Hace el texto de color azul */
+    font-size: 48px;
+  }
 
-mat-icon {
-  margin-left: 5px; /* Espacio entre el texto y el ícono */
-  /* Ajustes adicionales para el ícono si es necesario */
+  .botones {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 55px;
+    margin-top: 150px;
+    .macaws {
+      background-color: #4bbf90;
+      border: 3px solid black;
+      border-radius: 10px;
+      background-image: url("/assets/img/GroupMacaws.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      color: white;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: black;
+    }
+
+    .parrots {
+      background-color: #ed6b65;
+      border: 3px solid black;
+      border-radius: 10px;
+      background-image: url("/assets/img/GroupParrots.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      color: white;
+      -webkit-text-stroke-width: 2px;
+      -webkit-text-stroke-color: black;
+    }
+  }
 }

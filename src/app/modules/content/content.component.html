@@ -1,25 +1,23 @@
-<section class="main" *ngIf="!showParrots && !showMacaws">
-  <div class="add-game-button-container">
-    <button mat-raised-button (click)="openAddGameModal()">
-      <span>Add Game</span>
-      <mat-icon>add</mat-icon>
-    </button>
+<div class="main">
+  <div>
+    <h1>All Content</h1>
   </div>
-  
-  <button class="buttoncentral" mat-raised-button color="primary" (click)="toggleMacaws()">
-    MACAWS
-  </button>
-  <button class="buttoncentral" mat-raised-button color="accent" (click)="toggleParrots()">
-    PARROTS
-  </button>
-</section>
 
-<div *ngIf="showParrots">
-  <!-- Contenido del componente Parrots -->
-  <app-parrots></app-parrots>
-</div>
-
-<div *ngIf="showMacaws">
-  <!-- Contenido del componente Macaws -->
-  <app-macaws></app-macaws>
+  <section class="botones">
+    <button 
+      mat-raised-button 
+      class="macaws" 
+      routerLink="./macaws"
+      >
+      MACAWS
+    </button>
+    <button
+      mat-raised-button
+      class="parrots"
+      routerLink="./parrots"
+      >
+      PARROTS
+    </button>
+  </section>
+  <router-outlet></router-outlet>
 </div>
