@@ -16,26 +16,36 @@ import { ProgressStudentModalComponent } from 'src/app/modules/modals/progress-s
 })
 export class TeacherStudentsComponent implements OnInit {
   currentComponent: string | null = null;
+  color = '#65447C';
   students: any[] = [
     {
       name: 'Juan Perez',
+      class: 'Mathematics',
       dateAdded: '15/01/2023',
-      lastConnection: '01/02/2023'
+      lastConnection: '01/02/2023',
     },
     {
-      name: 'Alberto Perez',
-      dateAdded: '15/01/2023',
-      lastConnection: '01/02/2023'
+      name: 'Ana Gomez',
+      class: 'History',
+      dateAdded: '20/01/2024',
+      lastConnection: '02/02/2024',
     },
     {
-      name: 'Maria Perez',
+      name: 'Juan Perez',
+      class: 'Mathematics',
       dateAdded: '15/01/2023',
-      lastConnection: '01/02/2023'
+      lastConnection: '01/02/2023',
+    },
+    {
+      name: 'Ana Gomez',
+      class: 'History',
+      dateAdded: '20/01/2024',
+      lastConnection: '02/02/2024',
     },
     
   ];
 
-  displayedColumns: string[] = ['checkbox', 'name', 'dateAdded', 'lastConnection', 'actions'];
+  displayedColumns: string[] = ['checkbox', 'name', 'class', 'dateAdded', 'lastConnection', 'actions'];
   dataSource = new MatTableDataSource(this.students);
 
   @ViewChild(MatSort, { static: true })
@@ -47,6 +57,20 @@ export class TeacherStudentsComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
+  openModal() {
+    const dialogRef = this.dialog.open(AddNewStudentModalComponent, {
+      width: '50vw',
+      height: '60vh',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      if (result) {
+        this.students.push(result);
+        this.dataSource.data = this.students;
+      }
+    });
+  }
   openAddExistingStudentModal() {
     const dialogRef = this.dialog.open(AddExistingStudentModalComponent, {
       width: '300px',
