@@ -21,15 +21,6 @@ clase: any;
     );
   }
 
-  openModal() {
-    const dialogRef = this.dialog.open(EditClassModalComponent, {
-      width: '600px',
-    });
-
-    dialogRef.afterClosed().subscribe((result: any) => {
-      console.log('The dialog was closed');
-    });
-  }
 
   openEditModal(classData: any) {
     const dialogRef = this.dialog.open(EditClassModalComponent, {

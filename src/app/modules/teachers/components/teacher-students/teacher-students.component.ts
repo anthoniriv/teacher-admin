@@ -59,8 +59,8 @@ export class TeacherStudentsComponent implements OnInit {
 
   openModal() {
     const dialogRef = this.dialog.open(AddNewStudentModalComponent, {
-      width: '50vw',
-      height: '60vh',
+      width: '100vw',
+      height: '100vh',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -73,7 +73,7 @@ export class TeacherStudentsComponent implements OnInit {
   }
   openAddExistingStudentModal() {
     const dialogRef = this.dialog.open(AddExistingStudentModalComponent, {
-      width: '300px',
+      width: '344px',
     });
 
     dialogRef.afterClosed().subscribe(result => {

@@ -1,33 +1,54 @@
-<div class="students-container">
-  <div class="students-header">
+<div class="students-modal">
+  <div class="modal-header">
+    <h1></h1>
     <h2>Students</h2>
+    <button class="close-button">&times;</button>
   </div>
-  <div class="students-table-container">
-    <mat-table [dataSource]="dataSource" class="students-table">
-      
-      <ng-container matColumnDef="select">
-        <th mat-header-cell *matHeaderCellDef>
-          <mat-checkbox></mat-checkbox>
-        </th>
-        <td mat-cell *matCellDef="let row">
-          <mat-checkbox></mat-checkbox>
-        </td>
-      </ng-container>
-  
-      <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
-      </ng-container>
-  
-      <ng-container matColumnDef="lastname">
-        <th mat-header-cell *matHeaderCellDef> Lastname </th>
-        <td mat-cell *matCellDef="let row"> {{row.lastname}} </td>
-      </ng-container>
-  
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </mat-table>
-  </div>
-  
-  <button mat-button class="add-button">Add</button>
+  <table class="students-table">
+    <thead>
+      <tr>
+        <th
+        style="border-radius: 10px 0 0 10px"  
+        ><input type="checkbox"></th>
+        <th>Name</th>
+        <th
+        style="border-radius: 0 10px 10px 0"
+        >Lastname</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" name="student" value="1"></td>
+        <td>Javier A.</td>
+        <td>Lastname</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="student" value="1"></td>
+        <td>Javier A.</td>
+        <td>Lastname</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="student" value="1"></td>
+        <td>Javier A.</td>
+        <td>Lastname</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="student" value="1"></td>
+        <td>Javier A.</td>
+        <td>Lastname</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="student" value="1"></td>
+        <td>Javier A.</td>
+        <td>Lastname</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="student" value="1"></td>
+        <td>Javier A.</td>
+        <td>Lastname</td>
+      </tr>
+      <!-- Repite las filas según sea necesario -->
+    </tbody>
+  </table>
+  <button class="add-existing" (click)="openAddedStudentModal() ">Add existing</button>
 </div>

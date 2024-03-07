@@ -53,6 +53,7 @@ import { EditTeacherModalComponent } from './modules/modals/edit-teacher-modal/e
     BrowserAnimationsModule,
     SharedModule,
     MatTabsModule,
+  
     MatDialogModule,
   ],
   providers: [],

@@ -1,57 +1,89 @@
 .modal {
-  width: auto;
-  margin: auto;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-}
+  width: 596px;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid black;
+  border-radius: 2px;
+  overflow: hidden;
 
-.modal-header {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10px;
-}
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    color: #545FDF;
 
+    .close-button {
+      background: none;
+      border: none;
+      margin-bottom: 20px;
+      color: white;
+      font-size: 34px;
+      cursor: pointer;
+    }
+  }
 
-.input-with-icon {
-  display: flex;
-  align-items: center;
-}
+  .modal-tabs {
+    display: flex;
+    border-bottom: 1px solid black;
 
-.icon-button {
-  margin-left: 8px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
+    .tab-button {
+      flex: 1;
+      padding: 16px;
+      text-align: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
 
-.tab-content {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 10px;
-}
+      &.active {
+        border-bottom-color: #333FC8;
+        color:black;
+      }
 
-.tab-content label,
-.tab-content h1 {
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
+      &:hover {
+        background-color: #f9f9f9;
+      }
+    }
+  }
 
-.tab-content textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  height: 150px;
-  resize: vertical;
-}
+  .modal-body {
+    padding: 16px;
 
-.add-button {
-  margin-top: 10px;
-  padding: 10px;
-  border: 1px solid black;
-  border-radius: 4px;
-  cursor: pointer;
-  align-self: flex-end;
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    textarea {
+      width: 98%;
+      height: 250px;
+      padding: 8px;
+      border: 1px solid black;
+      border-radius: 4px;
+      resize: none;
+      min-height: 150px;
+    }
+  }
+
+  .modal-footer {
+    padding: 16px;
+    text-align: right;
+
+    .add-button {
+      padding: 10px 20px;
+      background-color: #4BBF90;
+      border: none;
+      border-radius: 4px;
+      border: 2px solid #000000;
+      color:#000000;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken(white, 10%);
+      }
+    }
+  }
 }
